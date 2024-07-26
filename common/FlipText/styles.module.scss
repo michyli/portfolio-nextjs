@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  .replaced {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.letter {
+  display: inline-block;
+}

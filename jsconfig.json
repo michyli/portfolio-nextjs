@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "#/*": ["./app/*"],
+      "$/*": ["./common/*"],
+      "@/*": ["./components/*"]
+    }
+  }
+}
