@@ -1,4 +1,5 @@
 @import '#/colorscheme';
+@import '#/screensize';
 
 .header {
     position: absolute;
@@ -36,7 +37,11 @@
         align-items: center;
         gap: 50px;
         padding: 15px;
-        
+
+        @media (width < $mediumlarge) {
+            display: none;
+        }
+
         .el {
             display: flex;
             flex-direction: column;
@@ -65,6 +70,19 @@
             }
         }
         a{
+            cursor: pointer;
+        }
+    }
+    
+    .navMenu {
+        display: none;
+
+        @media (width < $mediumlarge) {
+            display: flex;
+            align-items: center;
+            padding: 35px 10px 35px 35px ;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
         }
     }
@@ -98,10 +116,11 @@
 
 /* Hamburger Icon */
 .headerButtonContainer{
-    transform: scale(1);
+    scale: 0;
     position: fixed;
     right: 0px;
     z-index: 11;
+    transition: scale 0.25s cubic-bezier(0.65, 0, 0.35, 1);
     .button {
         position: relative;
         right: 0;

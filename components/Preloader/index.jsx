@@ -13,13 +13,6 @@ export default function Index() {
       setDimension({width: window.innerWidth, height: window.innerHeight})
   }, [])
 
-  useEffect( () => {
-      if(index == words.length - 1) return;
-      setTimeout( () => {
-          setIndex(index + 1)
-      }, index == 0 ? 1000 : 150)
-  }, [index])
-
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height} 0 ${dimension.height}  L0 0`
 

@@ -16,10 +16,19 @@ export default function index() {
   const button = useRef(null);
 
   useEffect( () => {
-    if(isActive) setIsActive(false)
+    if(isActive) 
+      setIsActive(false)
   }, [pathname])
 
-  useLayoutEffect( () => {
+  useEffect( () => {
+    if(isActive) {
+      button.current.style.scale = 1;
+    } else {
+      button.current.style.scale = 0;
+    }
+  }, [isActive])
+
+ /*  useLayoutEffect( () => {
       gsap.registerPlugin(ScrollTrigger)
       gsap.to(button.current, {
           scrollTrigger: {
@@ -30,7 +39,7 @@ export default function index() {
               onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
           }
       })
-  }, [])
+  }, []) */
 
 
   return (
@@ -75,6 +84,12 @@ export default function index() {
             </div>
           </Magnetic>
         </div>
+        <Magnetic>
+          <div className={styles.navMenu} onClick={() => setIsActive(true)}>
+            Menu
+          </div>
+        </Magnetic>
+
       </div>
       
       <div className={isActive ? styles.darkBackgroundActive : styles.darkBackground} onClick={() => setIsActive(false)}></div>
