@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import styles from './styles.module.scss';
 import { delay, motion } from 'framer-motion';
 
-export default function index({children, duration=0.25, stagger=0.01}) {
+export default function index({children, alterText="", duration=0.25, stagger=0.01}) {
     return (
         <motion.div 
         initial="initial"
@@ -44,7 +44,7 @@ export default function index({children, duration=0.25, stagger=0.01}) {
                 })}
             </div>
             <div className={styles.replaced}>
-            {children.split("").map((letter, index) => {
+            {alterText.split("").map((letter, index) => {
                     if (letter==" ") {
                         return <motion.span 
                             variants = {{

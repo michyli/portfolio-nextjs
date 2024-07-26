@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { slide, scale } from '../../animation';
+import FlipText from '$/FlipText';
 
 export default function Index({data, isActive, setSelectedIndicator}) {
   
@@ -16,7 +17,11 @@ export default function Index({data, isActive, setSelectedIndicator}) {
       initial="initial" 
       animate="enter" 
       exit="exit">
-        <div className={styles.indicator}></div>
+        <motion.div 
+          variants={scale} 
+          animate={isActive ? "open" : "closed"} 
+          className={styles.indicator}>
+        </motion.div>
         <Link href={href}>{title}</Link>
       </motion.div>
     )

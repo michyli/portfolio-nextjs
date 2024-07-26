@@ -25,7 +25,7 @@ export default function index() {
           scrollTrigger: {
               trigger: document.documentElement,
               start: 0,
-              end: window.innerHeight,
+              end: "50vh",
               onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
               onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
           }
@@ -39,7 +39,7 @@ export default function index() {
         <Magnetic>
           <a href="/" className={styles.logo}>
             <span className={styles.copyright}>©</span>
-            <FlipText>Code by Michael</FlipText>
+            <FlipText alterText='Home'>Code by Michael</FlipText>
           </a>
         </Magnetic>
 
