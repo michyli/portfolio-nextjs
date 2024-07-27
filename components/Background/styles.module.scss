@@ -1,1 +1,54 @@
-@import "#/colorscheme"
+@import "@/colorscheme";
+
+@mixin animate($animation,$duration,$method,$times){
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+  @keyframes #{$name}{
+      @content;
+  }
+}
+
+.background {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 106vh;
+  width: 100vw;
+  background-color: $primaryLight;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+    scale: 2.2;
+
+    @include keyframes(rotateVid){
+      0%{
+      transform: rotate(0deg);
+      }
+     100%{
+      transform: rotate(359deg);
+     }
+    }
+    @include animate(rotateVid, 120s, linear, infinite);
+  }
+
+  .glass {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($primaryLight, 0.2);
+    backdrop-filter: blur(15px) sepia(75%);
+    pointer-events: none;
+  }
+}

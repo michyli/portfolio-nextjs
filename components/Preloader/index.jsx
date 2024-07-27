@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { words } from "./data";
 import { useEffect, useState } from 'react';
 import styles from "./styles.module.scss";

@@ -1,22 +1,11 @@
 import styles from './styles.module.scss';
 import Arrow from './UpRightArrow';
 import Magnetic from '#/Magnetic';
+import FlipText from '#/FlipText';
 
 export default function index() {
 
   const socials = [
-    {
-      title: "Github",
-      href: "https://github.com/michyli",
-    },
-    {
-      title: "Linkedin",
-      href: "https://www.linkedin.com/in/michael-yunze-li/",
-    },
-    {
-      title: "Instagram",
-      href: "https://www.instagram.com/lyz._.li/",
-    },
     {
       title: "read.cv",
       href: "https://read.cv/michaelli",
@@ -34,9 +23,8 @@ export default function index() {
                     key={index} 
                     href={data.href} 
                     className={styles.link}>
-                    {data.title}
+                    <FlipText alterText={data.title}>{data.title}</FlipText>
                     </a>
-                    <div className={styles.background}></div>
                   </div>
                 </Magnetic>
         })

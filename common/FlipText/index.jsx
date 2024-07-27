@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react';
 import styles from './styles.module.scss';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function index({children, alterText="", duration=0.25, stagger=0.01}) {
     return (

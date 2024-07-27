@@ -1,45 +1,45 @@
 'use client';
+import React from 'react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import Nav from './sidenav';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Rounded from '$/RoundedButton';
-import Magnetic from '$/Magnetic';
-import FlipText from '$/FlipText';
+import { useMotionValueEvent, useScroll } from "framer-motion"
+import Magnetic from '#/Magnetic';
+import FlipText from '#/FlipText';
+import Rounded from '#/RoundedButton';
+import { useWindowSize } from "@uidotdev/usehooks";
 
 export default function index() {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
+  const size = useWindowSize();
+  const { scrollY } = useScroll()
 
-  useEffect( () => {
-    if(isActive) 
-      setIsActive(false)
-  }, [pathname])
-
-  useEffect( () => {
-    if(isActive) {
+  useEffect(() => {
+    if (isActive) {
       button.current.style.scale = 1;
     } else {
-      button.current.style.scale = 0;
+      if (!((document.documentElement.scrollTop || document.body.scrollTop) > 0.05 * size.height)) {
+        button.current.style.scale = 0;
+      }
     }
   }, [isActive])
 
- /*  useLayoutEffect( () => {
-      gsap.registerPlugin(ScrollTrigger)
-      gsap.to(button.current, {
-          scrollTrigger: {
-              trigger: document.documentElement,
-              start: 0,
-              end: "50vh",
-              onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
-              onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
-          }
-      })
-  }, []) */
+  useEffect(() => {
+    if (isActive) {
+      setIsActive(false)
+    }
+  }, [pathname])
+
+  useMotionValueEvent(scrollY, "change", (latestY) => {
+    if (latestY >= 0.05 * size.height)
+      button.current.style.scale = 1;
+    else
+      button.current.style.scale = 0;
+  })
 
 
   return (
@@ -89,15 +89,14 @@ export default function index() {
             Menu
           </div>
         </Magnetic>
-
       </div>
       
       <div className={isActive ? styles.darkBackgroundActive : styles.darkBackground} onClick={() => setIsActive(false)}></div>
 
       <div ref={button} className={styles.headerButtonContainer}>
-        <div onClick={() => setIsActive(!isActive)} className={`${styles.button}`}>
-          <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
-        </div>
+        <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
+            <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
+        </Rounded>
       </div>
 
       <AnimatePresence>

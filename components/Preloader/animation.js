@@ -32,7 +32,7 @@ export const progress = {
       duration: 3.5, ease: [0.76, 0, 0.24, 1], delay: 0.75,
       },
       y: {
-        duration: 0.75, ease: [0.76, 0, 0.24, 1], delay: 4.5,
+        duration: 1, ease: [0.76, 0, 0.24, 1], delay: 4.5,
       }
     }
   },

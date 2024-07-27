@@ -1,0 +1,70 @@
+@import "@/colorscheme";
+@import "@/screensize";
+
+.textContainer {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  
+  .centerContent {
+    position: relative;
+    top: 16vh;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    
+    .titleName {
+      fill: transparent;
+      transition: fill 0.3s cubic-bezier(.43,.01,.33,1);
+  
+      path {
+        transition: stroke-dashoffset .75s cubic-bezier(.43,.01,.33,1);
+      }
+    }
+    .description {
+      margin-top: 25px;
+      font-size: 1.2rem;
+      color: $primaryDark;
+    }  
+  }
+  .footerContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 50px;
+    font-size: 0.8rem;
+    pointer-events: auto;
+    .edgeFooter {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .el {
+        font-weight: 400;
+        padding: 20px;
+      }
+    }
+    .centerFooter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .el {
+        font-weight: 400;
+        padding: 20px;
+      }
+    }
+  }
+}
+

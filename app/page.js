@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useLayoutEffect, useState } from "react";
+import './globals.scss'
 import { gsap } from "gsap";
-import Loader from "@/Preloader";
-import Landing from "@/Landing";
+import Loader from "$/Preloader";
+import Landing from "$/Landing";
+import Background from "$/Background";
 import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -27,6 +29,7 @@ export default function Home() {
       <AnimatePresence mode='wait'>
         {isLoading && <Loader />}
       </AnimatePresence>
+      <Landing />
     </main>
   );
 }

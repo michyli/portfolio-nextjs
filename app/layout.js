@@ -1,10 +1,7 @@
 import './globals.scss'
 import { Montserrat } from "next/font/google";
 import { Suspense } from 'react'
-import Preloader from '@/Preloader'
-
-//import components
-import Header from "@/Header";
+import Header from "$/Header";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -17,10 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Suspense fallback={<Preloader/>}>
           <Header />
           {children}
-        </Suspense>
       </body>
     </html>
   );

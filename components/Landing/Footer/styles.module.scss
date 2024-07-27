@@ -1,0 +1,19 @@
+@import "@/colorscheme";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 40px;
+
+  .links {
+    position: relative;
+    display: flex;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    padding: 20px 20px 20px 20px;
+    color: $primaryDark;
+  }
+}

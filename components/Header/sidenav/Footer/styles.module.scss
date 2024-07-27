@@ -1,4 +1,4 @@
-@import '#/colorscheme';
+@import "@/colorscheme";
 
 .footer {
   display: flex;
@@ -14,6 +14,7 @@
     align-items: center;
     gap: 1px;
     padding: 20px 0 20px 8px;
+    color: $primaryLight;
 
     .background {
       position: absolute;

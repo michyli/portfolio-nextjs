@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { slide, scale } from '../../animation';
-import FlipText from '$/FlipText';
+import FlipText from '#/FlipText';
 
 export default function Index({data, isActive, setSelectedIndicator}) {
   
