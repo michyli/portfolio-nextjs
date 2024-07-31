@@ -1,6 +1,5 @@
 import './globals.scss'
 import { Montserrat } from "next/font/google";
-import { Suspense } from 'react'
 import Header from "$/Header";
 
 const montserrat = Montserrat({ subsets: ["latin"] });

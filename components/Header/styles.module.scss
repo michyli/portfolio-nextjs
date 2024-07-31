@@ -125,7 +125,7 @@
         margin: 20px;
         width: 80px;
         height: 80px;
-        background-color: $primaryAccent;
+        background-color: $secondaryAccent;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -134,8 +134,11 @@
 
         .burger {
             width: 100%;
+            height: 100%;
             position: relative;
-                z-index: 1;
+            padding-top: 50%;
+            z-index: 1;
+
             &::before, &::after {
                 content: "";
                 display: block;

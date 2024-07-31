@@ -3,11 +3,14 @@ import styles from './styles.module.scss';
 import Background from '$/Background';
 import FlipText from '#/FlipText';
 import Magnetic from '#/Magnetic';
+import Rounded from '#/RoundedButton';
 import Footer from './Footer';
 
 
 export default function index() {
   const name = useRef();
+
+  
 
   return (
     <>
@@ -27,6 +30,7 @@ export default function index() {
           </svg>
 
           <p className={styles.description}>Sophomore @ UC Berkeley</p>
+          <Rounded className={styles.resume} backgroundColor="rgba(239, 88, 46, 0.75)"><Magnetic><p>Resume</p></Magnetic></Rounded>
         </div>
 
         <div className={styles.footerContainer}>

@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { opacity, slideUp, wordSlide, progress } from './animation';
 
 export default function Index() {
-  const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({width: 0, height:0});
 
   useEffect( () => {

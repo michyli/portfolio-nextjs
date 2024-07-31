@@ -21,10 +21,12 @@ export default function index() {
   useEffect(() => {
     if (isActive) {
       button.current.style.scale = 1;
+      document.body.style.overflow = 'hidden';
     } else {
       if (!((document.documentElement.scrollTop || document.body.scrollTop) > 0.05 * size.height)) {
         button.current.style.scale = 0;
       }
+      document.body.style.overflow = 'auto';
     }
   }, [isActive])
 
@@ -48,7 +50,7 @@ export default function index() {
         <Magnetic>
           <a href="/" className={styles.logo}>
             <span className={styles.copyright}>©</span>
-            <FlipText alterText='Home'>Code by Michael</FlipText>
+            <FlipText alterText='Back to Home'>Coded by Michael</FlipText>
           </a>
         </Magnetic>
 
@@ -95,7 +97,7 @@ export default function index() {
 
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
-            <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
+            <Magnetic><div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div></Magnetic>
         </Rounded>
       </div>
 
