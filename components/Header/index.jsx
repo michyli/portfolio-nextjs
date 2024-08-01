@@ -96,7 +96,7 @@ export default function index() {
       <div className={isActive ? styles.darkBackgroundActive : styles.darkBackground} onClick={() => setIsActive(false)}></div>
 
       <div ref={button} className={styles.headerButtonContainer}>
-        <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
+        <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`} backgroundColor="rgba(239, 88, 46, 0.75)">
             <Magnetic><div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div></Magnetic>
         </Rounded>
       </div>

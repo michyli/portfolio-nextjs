@@ -9,7 +9,7 @@ import CurvedLine from "#/CurvedLine";
 export default function index() {
   const bg = useRef(null)
   const [numEl, setNumEl] = useState(0);
-  
+
   const phrase = "My comprehensive understanding of Front-end, Algorithms, and Mechanical Systems gives me a unique understanding of the product development process.";
 
   useEffect(() => {
@@ -25,20 +25,20 @@ export default function index() {
               })
             }
         <div className={styles.contentContainer}>
-          <h1 className={styles.title}>Featured Works</h1>
-          <div className={styles.workDisplay1}>
-            <div className={styles.videoContainer}><video src="/ki_rotation.webm" autoPlay={"autoplay"} muted loop /></div>
-            <p>[001] Flight Path Planning for Unmanned Drone</p>
+          <AppearsInView className={styles.title} marginRight='5px'><p>Featured Works</p></AppearsInView>
+          <div className={`${styles.videoContainer} ${styles.container1}`}>
+            <div><video src="/ki_fe_demo.webm" autoPlay={"autoplay"} muted loop /></div>
+            <AppearsInView><p>[001] Reforestation Desktop App</p></AppearsInView>
           </div>
-          <div className={styles.workDisplay2}>
-            <div className={styles.videoContainer}><video src="/battery_rotation.webm" autoPlay={"autoplay"} muted loop /></div>
-            <p>[002] 600V Custom Li-ion Battery Pack</p>
+          <div className={`${styles.videoContainer} ${styles.container2}`}>
+            <div><video src="/ki_rotation.webm" autoPlay={"autoplay"} muted loop /></div>
+            <AppearsInView><p>[002] Flight Path Planning Algorithm for Unmanned Drone</p></AppearsInView>
           </div>
-          <div className={styles.workDisplay3}>
-            <div className={styles.videoContainer}><video src="/ki_fe_demo.webm" autoPlay={"autoplay"} muted loop /></div>
-            <p>[003] Flight Path Planning for Unmanned Drone</p>
+          <div className={`${styles.videoContainer} ${styles.container3}`}>
+            <div><video src="/battery_rotation.webm" autoPlay={"autoplay"} muted loop /></div>
+            <AppearsInView><p>[003] 600V Custom Li-ion Battery Pack</p></AppearsInView>
           </div>
-          <AppearsInView className={styles.descriptionText}>{phrase}</AppearsInView>
+          <AppearsInView className={styles.phrase} marginRight='4px'><p>{phrase}</p></AppearsInView>
         </div>
       </div>
     </div>

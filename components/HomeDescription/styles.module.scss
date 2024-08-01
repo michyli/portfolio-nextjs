@@ -1,12 +1,12 @@
 @import '@/colorscheme';
+@import '@/screensize';
 
 .backgroundContainer {
   font-family: "Roboto";
   position: relative;
   top: 0;
   width: 100vw;
-  min-height: 150vh;
-  max-height: 500vh;
+  height: 400vh;
   background-color: $primaryLight;
   overflow: hidden;
   z-index: 0;
@@ -22,6 +22,7 @@
     gap: 100px;
     justify-content: flex-start;
     align-items: center;
+    z-index: 0;
     
     .curvedLine {
       position: absolute;
@@ -33,65 +34,97 @@
       position:relative;
       top: 10vh;
       width: 100%;
-      height: 80%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 10px; //! Distance between display objects
-  
+      gap: 35px;
+      @media (width < $mediumLarge) {
+        gap: 25px;
+      }
+
       .title {
-        font-family: "Montserrat";
-        font-size: 3em;
+        font-size: 3.5em;
         font-weight: 500;
       }
   
-      .workDisplay1, 
-      .workDisplay2, 
-      .workDisplay3 {
+      .videoContainer {
         position: relative;
-        width:45vw;
         background-color: transparent;
-        aspect-ratio: 3/2;
-        overflow: hidden;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        .videoContainer {
-          height: 90%;
+
+        div {
           overflow: hidden;
-          box-shadow: -10px 20px 20px -20px rgba(0, 0, 0, 0.25);
-  
+          width: 100%;
+          height: calc(100% - 20px);
+          
           video {
+            position: relative;
             width: 100%;
-            object-fit: contain;
+            height: calc(100% - 1em);
+            object-fit: cover;
+            box-shadow: -10px 20px 20px -20px rgba(0, 0, 0, 0.25);
           }
         }
         p {
-          margin-left: 8px;
-          width: 100%;
-          text-align: left;
           position: absolute;
           bottom: 0;
+          left: 0;
+          margin-left: 5px;
+          width: 100%;
+          text-align: left;
+          bottom: 0;
+          color: $primaryGrey;
+          font-size: 1em;
+          font-weight: 400;
         }
       }
   
-      .workDisplay1 {
-        align-self: flex-end;
-      }
-  
-      .workDisplay2 {
+      .container1 {
         align-self: flex-start;
+        max-width: 60%;
+        z-index: 1;
+        @media (width < $mediumLarge) {
+          min-width: 100%;
+        }
       }
   
-      .workDisplay3 {
-        align-self: center;
+      .container2 {
+        align-self: flex-end;
+        max-width: 50%;
+        z-index: 3;
+        @media (width < $mediumLarge) {
+          min-width: 100%;
+        }
       }
   
-      .descriptionText {
-        width: 40%;
+      .container3 {
         align-self: center;
-  
-      } 
+        max-width: 60%;
+        margin-right: 10vw;
+        z-index: 2;
+        @media (width < $mediumLarge) {
+          min-width: 100%;
+          margin-right: 0;
+        }
+      }
+      .phrase {
+        padding-top: 100px;
+        align-self: center;
+        width: 550px;
+        font-size: 2em;
+        font-weight: 400;
+        @media (width < $mediumLarge) {
+          width: 450px;
+          font-size: 1.8em;
+        }
+        @media (width < $medium) {
+          width: 100%;
+          font-size: 1.5em;
+        }
+      }
     }
   }
 } 

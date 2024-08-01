@@ -23,16 +23,31 @@
     justify-content: center;
     pointer-events: auto;
     gap: 25px;
+    @media (width < $small) {
+      gap: 10px;
+    } 
     
     .titleName {
       font-size: 10em;
       font-weight: 800;
       line-height: .85em;
-      color: $primaryDark;      
+      color: $primaryDark;  
+      @media (width < $mediumLarge) {
+        font-size: 9em;
+      }  
+      @media (width < $medium) {
+        font-size: 7em;
+      }  
+      @media (width < $small) {
+        font-size: 4em;
+      } 
     }
     .description {
       font-size: 1.2rem;
       color: $primaryDark;
+      @media (width < $small) {
+        font-size: 1em;
+      } 
     }  
     .resume{
       position: relative;
@@ -46,16 +61,23 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      @media (width < $medium) {
+        width: 150px;
+        height: 40px;
+      }  
       p{
           width: 100%;
           text-align: center;
           align-self: center;
           margin: 0px;
-          font-size: 16px;
+          font-size: 1em;
           font-weight: 500;
           position: relative;
           padding: 15px 0;
           z-index: 1;
+          @media (width < $medium) {
+            font-size: .8em;
+          }  
       }
   }
   }
@@ -83,6 +105,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      @media (width < $small) {
+        display: none;
+      } 
       .el {
         font-weight: 400;
         padding: 20px;
