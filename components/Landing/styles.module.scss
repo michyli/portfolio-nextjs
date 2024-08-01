@@ -2,6 +2,7 @@
 @import "@/screensize";
 
 .textContainer {
+  font-family: "Roboto";
   position: absolute;
   top: 0;
   height: 100vh;
@@ -9,11 +10,11 @@
   z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
   pointer-events: none;
   
   .centerContent {
     position: relative;
-    top: 16vh;
     height: 60%;
     width: 100%;
     display: flex;
@@ -24,12 +25,10 @@
     gap: 25px;
     
     .titleName {
-      fill: transparent;
-      transition: fill 0.3s cubic-bezier(.43,.01,.33,1);
-  
-      path {
-        transition: stroke-dashoffset .75s cubic-bezier(.43,.01,.33,1);
-      }
+      font-size: 10em;
+      font-weight: 800;
+      line-height: .85em;
+      color: $primaryDark;      
     }
     .description {
       font-size: 1.2rem;
@@ -53,7 +52,7 @@
           align-self: center;
           margin: 0px;
           font-size: 16px;
-          font-weight: 300;
+          font-weight: 500;
           position: relative;
           padding: 15px 0;
           z-index: 1;
@@ -91,4 +90,3 @@
     }
   }
 }
-

@@ -1,18 +1,97 @@
 @import '@/colorscheme';
 
 .backgroundContainer {
+  font-family: "Roboto";
   position: relative;
   top: 0;
   width: 100vw;
-  height: 150vh;
+  min-height: 150vh;
+  max-height: 500vh;
   background-color: $primaryLight;
   overflow: hidden;
   z-index: 0;
-
-  .contentContainer {
-    position: inherit;
-    top: 10vh;
-    width: 100%;
-
+  display: flex;
+  justify-content: center;
+  
+  .lbg {
+    position: relative;
+    top: 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .curvedLine {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  
+    .contentContainer {
+      position:relative;
+      top: 10vh;
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px; //! Distance between display objects
+  
+      .title {
+        font-family: "Montserrat";
+        font-size: 3em;
+        font-weight: 500;
+      }
+  
+      .workDisplay1, 
+      .workDisplay2, 
+      .workDisplay3 {
+        position: relative;
+        width:45vw;
+        background-color: transparent;
+        aspect-ratio: 3/2;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .videoContainer {
+          height: 90%;
+          overflow: hidden;
+          box-shadow: -10px 20px 20px -20px rgba(0, 0, 0, 0.25);
+  
+          video {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        p {
+          margin-left: 8px;
+          width: 100%;
+          text-align: left;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+  
+      .workDisplay1 {
+        align-self: flex-end;
+      }
+  
+      .workDisplay2 {
+        align-self: flex-start;
+      }
+  
+      .workDisplay3 {
+        align-self: center;
+      }
+  
+      .descriptionText {
+        width: 40%;
+        align-self: center;
+  
+      } 
+    }
   }
 } 
