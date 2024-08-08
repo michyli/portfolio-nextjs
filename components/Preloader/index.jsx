@@ -1,16 +1,15 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { words } from "./data";
-import { useEffect, useState } from 'react';
 import styles from "./styles.module.scss";
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { opacity, slideUp, wordSlide, progress } from './animation';
 
 export default function Index() {
   const [dimension, setDimension] = useState({width: 0, height:0});
 
-  useEffect( () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
+  useEffect(() => {
+    setDimension({width: window.innerWidth, height: window.innerHeight})
   }, [])
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`

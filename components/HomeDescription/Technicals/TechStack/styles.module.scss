@@ -1,0 +1,45 @@
+.mainContainer {
+  position: relative;
+  top: 0;
+  height: fit-content;
+
+  .subTitle {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  .iconsContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+  
+    .icons {
+      height: 70px;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      img {
+        position: relative;
+        top: 0;
+        max-height:70%;
+        aspect-ratio: auto;
+        top: 0;
+        object-fit: cover;
+      }
+      span{
+        font-size: 1em;
+        font-weight: 400;
+      }
+    }
+  }
+}
+

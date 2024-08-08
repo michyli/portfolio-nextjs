@@ -2,9 +2,10 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import './globals.scss'
 import Loader from "$/Preloader";
+import { AnimatePresence } from "framer-motion";
 import Landing from "$/Landing";
 import HomeDescription from "$/HomeDescription";
-import { AnimatePresence } from "framer-motion";
+import Footer from "$/Footer";
 
 export default function Home() {
   const [isLoading, setisLoading] = useState(true);
@@ -25,12 +26,13 @@ export default function Home() {
 
   return (
     <main>
-      {/* <AnimatePresence mode='wait'>
+      <AnimatePresence mode='wait'>
         {isLoading && <Loader />}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
       <Landing />
       <HomeDescription />
+      <Footer/>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import './globals.scss'
 import { Montserrat } from "next/font/google";
+import dynamic from 'next/dynamic';
 import Header from "$/Header";
 
 const montserrat = Montserrat({ subsets: ["latin"] });

@@ -1,130 +1,104 @@
 @import '@/colorscheme';
 @import '@/screensize';
 
-.backgroundContainer {
-  font-family: "Roboto";
+.main {
   position: relative;
-  top: 0;
-  width: 100vw;
-  height: 400vh;
-  background-color: $primaryLight;
-  overflow: hidden;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
   
-  .lbg {
-    position: relative;
-    top: 0;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 0;
-    
-    .curvedLine {
+  .circleContainer {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    .circle {
       position: absolute;
-      top: 0;
-      width: 100%;
-    }
-  
-    .contentContainer {
-      position:relative;
-      top: 10vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 35px;
-      @media (width < $mediumLarge) {
-        gap: 25px;
-      }
-
-      .title {
-        font-size: 3.5em;
-        font-weight: 500;
-      }
-  
-      .videoContainer {
-        position: relative;
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        div {
-          overflow: hidden;
-          width: 100%;
-          height: calc(100% - 20px);
-          
-          video {
-            position: relative;
-            width: 100%;
-            height: calc(100% - 1em);
-            object-fit: cover;
-            box-shadow: -10px 20px 20px -20px rgba(0, 0, 0, 0.25);
-          }
-        }
-        p {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          margin-left: 5px;
-          width: 100%;
-          text-align: left;
-          bottom: 0;
-          color: $primaryGrey;
-          font-size: 1em;
-          font-weight: 400;
-        }
-      }
-  
-      .container1 {
-        align-self: flex-start;
-        max-width: 60%;
-        z-index: 1;
-        @media (width < $mediumLarge) {
-          min-width: 100%;
-        }
-      }
-  
-      .container2 {
-        align-self: flex-end;
-        max-width: 50%;
-        z-index: 3;
-        @media (width < $mediumLarge) {
-          min-width: 100%;
-        }
-      }
-  
-      .container3 {
-        align-self: center;
-        max-width: 60%;
-        margin-right: 10vw;
-        z-index: 2;
-        @media (width < $mediumLarge) {
-          min-width: 100%;
-          margin-right: 0;
-        }
-      }
-      .phrase {
-        padding-top: 100px;
-        align-self: center;
-        width: 550px;
-        font-size: 2em;
-        font-weight: 400;
-        @media (width < $mediumLarge) {
-          width: 450px;
-          font-size: 1.8em;
-        }
-        @media (width < $medium) {
-          width: 100%;
-          font-size: 1.5em;
-        }
-      }
+      height: 100%;
+      width: 150%;
+      border-radius: 50%;
+      background-color: $primaryLight;
     }
   }
-} 
+
+  .topCircleContainer {
+    top: 0;
+    .topCircle {
+      left: 50%;
+      transform: translate(-50%, 85%);
+      box-shadow: 0px -30px 50px 5px;
+    }
+  }
+
+  .botCircleContainer {
+    bottom: 0;
+    .botCircle {
+      left: 50%;
+      transform: translate(-50%, -85%);
+      box-shadow: 0px 30px 50px 5px;
+    }
+  }
+
+  .backgroundContainer {
+    font-family: "Roboto";
+    position: relative;
+    top: 0;
+    width: 100vw;
+    background-color: $primaryLight;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .lbg {
+      position: relative;
+      top: 0;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 0;
+      
+      .curvedLine {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      .moreContainer {
+        z-index: 10;
+        .more{
+          position: relative;
+          width: 200px;
+          height: 50px;
+          background-color: rgba($secondaryAccent, 0.8);
+          border: 2px solid $primaryDark;
+          color: $primaryDark;
+          border-radius: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 3;
+          cursor: pointer;
+          @media (width < $medium) {
+            width: 150px;
+            height: 40px;
+          }  
+          p{
+              width: 100%;
+              text-align: center;
+              align-self: center;
+              margin: 0px;
+              font-size: 1em;
+              font-weight: 500;
+              position: relative;
+              padding: 15px 0;
+              z-index: 1;
+              @media (width < $medium) {
+                font-size: .8em;
+              }  
+          }
+        }
+      }
+    }
+  } 
+}

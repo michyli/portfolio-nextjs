@@ -9,13 +9,11 @@ import { useMotionValueEvent, useScroll } from "framer-motion"
 import Magnetic from '#/Magnetic';
 import FlipText from '#/FlipText';
 import Rounded from '#/RoundedButton';
-import { useWindowSize } from "@uidotdev/usehooks";
 
 export default function index() {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
-  const size = useWindowSize();
   const { scrollY } = useScroll()
 
   useEffect(() => {
@@ -23,7 +21,7 @@ export default function index() {
       button.current.style.scale = 1;
       document.body.style.overflow = 'hidden';
     } else {
-      if (!((document.documentElement.scrollTop || document.body.scrollTop) > 0.05 * size.height)) {
+      if (!((document.documentElement.scrollTop || document.body.scrollTop) > 0.2 * window.innerHeight)) {
         button.current.style.scale = 0;
       }
       document.body.style.overflow = 'auto';
@@ -37,20 +35,23 @@ export default function index() {
   }, [pathname])
 
   useMotionValueEvent(scrollY, "change", (latestY) => {
-    if (latestY >= 0.05 * size.height)
-      button.current.style.scale = 1;
-    else
-      button.current.style.scale = 0;
+    if (window !== 'undefined') {
+      if (latestY >= 0.2 * window.innerHeight) {
+        button.current.style.scale = 1;
+      } else {
+        button.current.style.scale = 0;
+      }
+    }
   })
 
 
   return (
     <>
-      <div className={styles.header}>
+      <div data-scroll data-scroll-speed={-0.05} className={styles.header}>
         <Magnetic>
           <a href="/" className={styles.logo}>
             <span className={styles.copyright}>©</span>
-            <FlipText alterText='Back to Home'>Coded by Michael</FlipText>
+            <FlipText alterText='李昀泽' alterFont='Ma Shan Zheng'>Coded by Michael</FlipText>
           </a>
         </Magnetic>
 

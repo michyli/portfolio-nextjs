@@ -1,4 +1,5 @@
-import { React, useRef } from 'react';
+"use client";
+import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
 import Background from '$/Background';
 import FlipText from '#/FlipText';
@@ -7,11 +8,12 @@ import Rounded from '#/RoundedButton';
 import Footer from './Footer';
 
 export default function index() {
+
   return (
     <>
-      <Background></Background>
+      <Background/>
       <div className={styles.textContainer}>
-        <div className={styles.centerContent}>
+        <div data-scroll data-scroll-speed={-0.2} className={styles.centerContent}>
           <h1 className={styles.titleName}>Michael Li</h1>
 
           <p className={styles.description}>Sophomore @ UC Berkeley</p>
@@ -20,7 +22,7 @@ export default function index() {
           </Rounded>
         </div>
 
-        <div className={styles.footerContainer}>
+        <div data-scroll data-scroll-speed={-0.05} className={styles.footerContainer}>
           <div className={styles.edgeFooter}>
             <Magnetic><div className={styles.el}><FlipText alterText="©2024">.v2.0.1&nbsp;&nbsp;</FlipText></div></Magnetic>
             <Footer></Footer>

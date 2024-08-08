@@ -1,0 +1,24 @@
+@import '@/colorscheme';
+@import '@/screensize';
+
+.worksContainer {
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  
+  .title {
+    width: 100%;
+    text-align: left;
+    font-size: 3.5em;
+    font-weight: 500;
+    margin-bottom: 50px;
+    @media (width < $mediumLarge) {
+      font-size: 3em;
+    }
+    @media (width < $medium) {
+      font-size: 2.5em;
+    }
+  }
+}

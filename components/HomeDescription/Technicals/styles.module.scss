@@ -1,0 +1,32 @@
+@import '@/colorscheme';
+@import '@/screensize';
+
+.stacksContainer {
+  position:relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  padding-bottom: 200px;
+  @media (width < $mediumLarge) {
+    gap: 25px;
+  }
+
+  .title {
+    font-size: 3.5em;
+    font-weight: 500;
+    @media (width < $mediumLarge) {
+      font-size: 3em;
+    }
+    @media (width < $medium) {
+      font-size: 2.5em;
+    }
+  }
+  .skillsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,9 @@
+@import '@/colorscheme';
+@import '@/screensize';
+
+.footer {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  z-index: 0;
+}

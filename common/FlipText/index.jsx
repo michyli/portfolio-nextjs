@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { motion } from 'framer-motion';
 
-export default function index({children, alterText="", duration=0.25, stagger=0.01}) {
+export default function index({children, alterText="", alterFont="Roboto", duration=0.25, stagger=0.01}) {
     return (
         <motion.div 
         initial="initial"
@@ -43,7 +43,7 @@ export default function index({children, alterText="", duration=0.25, stagger=0.
                     }
                 })}
             </div>
-            <div className={styles.replaced}>
+            <div className={styles.replaced} style={{fontFamily: alterFont}}>
             {alterText.split("").map((letter, index) => {
                     if (letter==" ") {
                         return <motion.span 

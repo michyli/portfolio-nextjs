@@ -10,7 +10,7 @@ export default function index() {
       <Magnetic>
         <div className={styles.links}>
           <Arrow size={18}/>
-          <a href="https://read.cv/michaelli" className={styles.link}>
+          <a href="https://read.cv/michaelli" target="_blank" className={styles.link}>
             <FlipText alterText="read.cv">read.cv</FlipText>
           </a>
         </div>

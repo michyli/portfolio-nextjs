@@ -5,7 +5,7 @@ export const opacity = {
   },
   animate: {
       opacity: 0.75,
-      clipPath: "polygon(0% 49.25%, 100% 49.25%, 100% 49.25%, 0% 49.25%)",
+      clipPath: "polygon(0% 50.75%, 100% 50.75%, 100% 50.75%, 0% 50.75%)",
       transition: {
         opacity:{
           duration: .5,

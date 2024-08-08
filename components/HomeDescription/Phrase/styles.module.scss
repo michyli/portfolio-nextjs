@@ -1,0 +1,34 @@
+@import '@/colorscheme';
+@import '@/screensize';
+
+.phraseContainer {
+  position:relative;
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60vh 18vw 75vh 18vw;
+  @media (width < $mediumLarge) {
+    padding: 50px 100px 50px 100px
+  }
+  @media (width < $medium) {
+    padding: 25px 50px 25px 50px
+  }
+
+  .phrase {
+    position: relative;
+    align-self: center;
+    width: 100%;
+    font-size: 3em;
+    font-weight: 400;
+    @media (width < $mediumLarge) {
+      width: 100%;
+      font-size: 2.5em;
+    }
+    @media (width < $medium) {
+      width: 100%;
+      font-size: 2em;
+    }
+  }
+}

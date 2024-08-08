@@ -28,11 +28,11 @@ export default function index() {
       {
         socials.map( (data, index) => {
           return <Magnetic>
-                  <div className={styles.links}>
+                  <div key={index} className={styles.links}>
                     <Arrow size={18}/>
                     <a 
-                    key={index} 
                     href={data.href} 
+                    target="_blank"
                     className={styles.link}>
                     {data.title}
                     </a>
